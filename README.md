@@ -14,7 +14,7 @@ norm_opt: = 0 means no normalization, = 1 means binarize, = 2 means divide by th
 
 Output:
 
-M: the resulting effective matrix
+M: the resulting effective connectivity matrix
 
 etem: the reconstruction error over the iterations
 
