@@ -1,5 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
 % These scripts aim at computing the effective connectivity by using functional and structural MRI data. 
 % The main function to compute the autoregressive model as in A.Crimi et al. "Effective Brain Connectivity Through a Constrained Autoregressive Model" MICCAI 2016
 % 
@@ -14,6 +12,4 @@
 % M: the resulting effective matrix
 % etem: the reconstruction error over the iterations
 %
-% Data are loaded using the script of Jimmy Shen to load NIFTI and Analyze files, those are in the folder libs
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Data are loaded using the script of Jimmy Shen to load NIFTI and Analyze files, those are in the folder libs.
