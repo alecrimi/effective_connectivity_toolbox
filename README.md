@@ -11,6 +11,7 @@ name_session: the folder with the subjects for the same session (or folder with 
 name_fold: main folder for single subject e.g.'MR_9421819_1328';
 
 norm_opt: = 0 means no normalization, = 1 means binarize, = 2 means divide by the maximum
+(Although convergence should be reached anyhow)
 
 Output:
 
