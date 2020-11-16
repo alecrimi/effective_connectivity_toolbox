@@ -20,3 +20,5 @@ M: the resulting effective connectivity matrix
 etem: the reconstruction error over the iterations
 
 Data are loaded using the script of Jimmy Shen to load NIFTI and Analyze files, those are in the folder libs.
+
+The code can be run on "pure" pre-processed BOLD series, or on the deconvoluted version which removes the hemodynamics response. In this latter case, the code related to  Wu et al, "A blind deconvolution approach to recover effective connectivity brain networks from resting state fMRI data, (doi: 10.1016/j.media.2013.01.003) is used, and for this installation of SPM12 is necessary.
