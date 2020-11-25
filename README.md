@@ -2,7 +2,7 @@ These scripts aim at computing the effective connectivity by using functional an
 
 The main function to compute the autoregressive model as in A.Crimi et al. "Effective Brain Connectivity Through a Constrained Autoregressive Model" MICCAI 2016
  
-The path is assumed to be of the data from the NKI 1000Connectome project 
+The path is assumed to be of the data from the NKI 1000Connectome project (in the original path definition, to be used in BIDS structure, the path has to be changed)
 
 Input: 
 
@@ -18,6 +18,9 @@ Output:
 M: the resulting effective connectivity matrix
 
 etem: the reconstruction error over the iterations
+
+![alt text](https://github.com/alecrimi/effective_connectivity_toolbox/blob/master/nft.jpg)
+
 
 Data are loaded using the script of Jimmy Shen to load NIFTI and Analyze files, those are in the folder libs.
 
