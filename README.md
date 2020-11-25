@@ -1,7 +1,7 @@
 These scripts aim at computing the effective connectivity by using functional and structural MRI data. 
 
-The main function to compute the autoregressive model as in A.Crimi et al. "Effective Brain Connectivity Through a Constrained Autoregressive Model" MICCAI 2016
- 
+The main function to compute the autoregressive model as in <a href="https://link.springer.com/chapter/10.1007/978-3-319-46720-7_17" target="_blank"> A.Crimi et al. "Effective Brain Connectivity Through a Constrained Autoregressive Model" MICCAI 2016
+</a> 
 The path is assumed to be of the data from the NKI 1000Connectome project (in the original path definition, to be used in BIDS structure, the path has to be changed)
 
 Input: 
