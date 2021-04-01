@@ -21,6 +21,20 @@ body {
   line-height: 1.6;
   font-weight: 200;
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+animation: fadeInAnimation ease 3s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+		@keyframes fadeInAnimation {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,10 +98,10 @@ h3 { font-size: 2.0rem; line-height: 1.6;  letter-spacing: 0; margin-bottom: 0.7
   </div>
 
   <div class="column"  >
-<a   href="#chord"><span>Chord diagram Power ROI</span></a>
+<a   href="#chord"><span>Chord diagram Power atlas</span></a>
   </div>
   <div class="column"  >
-<a   href="#chord2"><span>Chord diagram AAL</span></a>
+<a   href="#chord2"><span>Chord diagram AAL atlas</span></a>
   </div>
 <div class="column"  >
 <a   href='https://github.com/alecrimi/effective_connectivity_toolbox' target="_blank"><span>Code</span></a>
@@ -130,12 +144,12 @@ At the bottom you can load your own adjacency matrices with the same labels.<br>
 
  <div>
 <h3> 
- The graph at the top shows connectome for the loaded adjacency matrix </b>
+ The graph at the top shows connectome for the loaded adjacency matrix (Power 264 ROIs)</b>
 </h3> 
 
 <h3> 
- The interactive graph at the bottom shows the impact of the method. <b>For the same subject, Left: Original connectome (Power ROI). Right: Connections effectively used (Power ROI). 
-<br>Last row: Connections effectively used (AAL atlas)<br>
+ The interactive graph at the bottom shows the impact of the method. <b>For the same subject, Left: Original connectome (Power 264 ROIs). Right: Connections effectively used (Power 264 ROIs). 
+<br>Last row: Connections effectively used (AAL atlas 90 ROIs, shown as a demo since it is simpler to understand)<br>
  Move the mouse over the areas to see the effect </b>.
 </h3> 
  </div>
