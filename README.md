@@ -28,5 +28,6 @@ The code can be run on "pure" pre-processed BOLD series, or on the deconvoluted 
 
 
 **SIMULATIONS**
+
 You can also test well known ground-truth BOLD simulations from <a href="https://www.fmrib.ox.ac.uk/datasets/netsim/" target="_blank"> Netsim (Smith et al. Neuroimage 2011) </a> 
-In the folder simulations there are the basic scripts to load simulations and run the CMAR model.
+In the folder *simulations* there are the basic scripts to load simulations and run the CMAR model.
