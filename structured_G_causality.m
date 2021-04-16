@@ -1,4 +1,4 @@
-function [M, etem] = structured_G_causality(name_session, name_fold, norm_opt, use_multistep )
+function [M, etem] = structured_G_causality(name_session, name_fold, norm_opt, use_multistep, use_deconv )
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % These scripts aim at computing the effective connectivity by using functional and structural MRI data. 
@@ -11,6 +11,7 @@ function [M, etem] = structured_G_causality(name_session, name_fold, norm_opt, u
 % name_fold: main folder for single subject e.g.'MR_9421819_1328';
 % norm_opt: = 0 means no normalization, = 1 means binarize, = 2 means divide by the maximum
 % use_multistep: = 0 means only direct connections, 1 means first order indirect
+% use_deconv: 0 normal BOLD signyl, 1 deconvolving the HRF
 %
 % Output:
 % M: the resulting effective matrix
@@ -84,6 +85,12 @@ for b = 1 : brain_par
     averaged_bold_seq(:,b) =  averaged_bold_seq(:,b) - mean_sig ; 
 end
 
+if(use_deconv)
+    TR = 1.4;
+    thr = 1; 
+    event_lag_max = round(10 / TR);
+    [averaged_bold_seq onset hrf event_lag PARA] = wgr_deconv_canonhrf_par(averaged_bold_seq,thr,event_lag_max,TR);
+end
 
 %%%%%%%%%%%%%%%% STRUCTURAL PART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load structural matrix
