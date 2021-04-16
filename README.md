@@ -13,6 +13,11 @@ name_fold: main folder for single subject e.g.'MR_9421819_1328';
 norm_opt: = 0 means no normalization, = 1 means binarize, = 2 means divide by the maximum
 (Although convergence should be reached anyhow)
 
+use_multistsp: = 0 only direct connections, 1 use direct and indirect connections
+
+use_deconv: = 0 use normal BOLD signal, 1 perform the deconvolution of the HRF (this will require SPM12 which is not included in this repo)
+
+
 Output:
 
 M: the resulting effective connectivity matrix
@@ -24,7 +29,7 @@ etem: the reconstruction error over the iterations
 
 Data are loaded using the script of Jimmy Shen to load NIFTI and Analyze files, those are in the folder libs.
 
-The code can be run on "pure" pre-processed BOLD series, or on the deconvoluted version which removes the hemodynamics response. In this latter case, the code related to  Wu et al, "A blind deconvolution approach to recover effective connectivity brain networks from resting state fMRI data, (doi: 10.1016/j.media.2013.01.003) is used, and for this installation of SPM12 is necessary.
+The code can be run on "pure" pre-processed BOLD series, or on the deconvoluted version which removes the hemodynamics response. In this latter case, the code related to  Wu et al, "A blind deconvolution approach to recover effective connectivity brain networks from resting state fMRI data, (doi: 10.1016/j.media.2013.01.003) is used, and for this installation  SPM12 is necessary.
 
 
 **SIMULATIONS**
