@@ -7,7 +7,7 @@ Some interactive visualization is acceesible on the website
 <a href="https://www.effectiveconnectivity.net" target="_blank">www.effectiveconnectivity.net
 </a> 
 
-
+Main function (structured_G_causality.m)
 Input: 
 
 name_session: the folder with the subjects for the same session (or folder with all subjects)
