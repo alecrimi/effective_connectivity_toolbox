@@ -25,19 +25,3 @@ for kk= 1 : n_simulations
     dif(kk) = sum(sum(abs((gt>0) - causal)));
     
 end
-
-
-a = 4;
-b = 10;
-r = (b-a).*rand(50,1) + a;
-
-hold on
-plot(dif,'og','MarkerSize',10);
-plot(r,'bx','MarkerSize',10);
-xlabel('Simulations');
-ylabel('Ground Truth Differences');
-xlim([-0.5 51])
-ylim([0 10])
-legend('CMAR','DCM')
-box on;
-hold off
