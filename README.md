@@ -2,6 +2,9 @@ These scripts aim at computing the effective connectivity by using functional an
 
 The main function to compute the autoregressive model as in <a href="https://link.springer.com/chapter/10.1007/978-3-319-46720-7_17" target="_blank"> A.Crimi et al. "Effective Brain Connectivity Through a Constrained Autoregressive Model" MICCAI 2016
 </a> 
+For a detailed article, read <a href="https://www.sciencedirect.com/science/article/pii/S1053811921005644" target="_blank"> A.Crimi et al. "Structurally Constrained Effective Brain Connectivity" Neuroimage 2021
+</a> 
+
 The path is assumed to be of the data from the NKI 1000Connectome project (in the original path definition, to be used in BIDS structure, the path has to be changed)
 Some interactive visualization is acceesible on the website
 <a href="https://www.effectiveconnectivity.net" target="_blank">www.effectiveconnectivity.net
@@ -35,8 +38,10 @@ Data are loaded using the script of Jimmy Shen to load NIFTI and Analyze files, 
 
 The code can be run on "pure" pre-processed BOLD series, or on the deconvoluted version which removes the hemodynamics response. In this latter case, the code related to  Wu et al, "A blind deconvolution approach to recover effective connectivity brain networks from resting state fMRI data, (doi: 10.1016/j.media.2013.01.003) is used, and for this installation  SPM12 is necessary.
 
+**Community Detection**
+Scripts about community detection creted by Luca Dodero are in the separated folder
 
-**SIMULATIONS**
+**Simulations**
 
 You can also test well known ground-truth BOLD simulations from <a href="https://www.fmrib.ox.ac.uk/datasets/netsim/" target="_blank"> Netsim (Smith et al. Neuroimage 2011) </a> 
 In the folder *simulations* there are the basic scripts to load simulations and run the CMAR model.
