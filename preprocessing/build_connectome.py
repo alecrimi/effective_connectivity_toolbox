@@ -76,7 +76,7 @@ M = utils.connectivity_matrix(csd_streamlines, labelsint, affine=affine  )
 #Remove background
 M = M[1:,1:]
 #Remove the last rows and columns since they are cerebellum and brainstem
-M = M[:90,:90]
+M = M[:90,:90] #This is 90 for the AAL, use appropriate values for Gordon, Power or others
 '''
 #Reshuffle making all left areas first right areas
 odd_odd = M[::2, ::2]
