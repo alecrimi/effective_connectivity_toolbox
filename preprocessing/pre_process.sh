@@ -94,7 +94,7 @@ for d in */ ; do
  
                  echo "Generate Connectome matrix"
                  cp ../../../../../../../../*.py .
-                 python  visualisation.py 
+                 python  build_connectome.py 
                  cd ..
                  cd ..
  
