@@ -18,6 +18,7 @@ from dipy.tracking.utils import density_map
 from dipy.tracking import utils
 import matplotlib.pyplot as plt
 
+#Data to be read
 fimg = "DTICAP_bet.nii.gz"
 img = nib.load(fimg)
 data = img.get_data()
@@ -27,8 +28,9 @@ voxel_size = header.get_zooms()[:3]
 mask, S0_mask = median_otsu(data[:, :, :, 0])
 fbval = "../TXT/DTICAP.bval"
 fbvec = "../TXT/DTICAP.bvec"
-
 bvals, bvecs = read_bvals_bvecs(fbval, fbvec)
+
+#build diffusion model
 gtab = gradient_table(bvals, bvecs)
 ten_model = TensorModel(gtab)
 ten_fit = ten_model.fit(data, mask)
@@ -45,7 +47,8 @@ pmd = peaks_from_model(model=csamodel,
                        min_separation_angle=25,
                        mask=mask,
                        return_odf=False)
-#Deterministic tractography 
+
+#Run deterministic tractography 
 eu = EuDX(a=fa, ind=pmd.peak_indices[..., 0], seeds=2000000, odf_vertices=sphere.vertices, a_low=0.01)
 affine = eu.affine
 csd_streamlines= list(eu)
@@ -55,8 +58,7 @@ csd_streamlines= list(eu)
 from dipy.tracking.utils import length 
 csd_streamlines=[t for t in csd_streamlines if length(t)>30]
  
-
-#Trackvis
+#Save trackvis
 hdr = nib.trackvis.empty_header()
 hdr['voxel_size'] = img.get_header().get_zooms()[:3]
 hdr['voxel_order'] = 'LAS'
@@ -64,8 +66,7 @@ hdr['dim'] = fa.shape
 tensor_streamlines_trk = ((sl, None, None) for sl in csd_streamlines)
 ten_sl_fname = 'tensor_streamlines.trk'
 nib.trackvis.write(ten_sl_fname, tensor_streamlines_trk, hdr, points_space='voxel')
-
-print np.shape(csd_streamlines)
+ 
 atlas = nib.load('atlas_reg.nii.gz')
 labels = atlas.get_data()
 labelsint = labels.astype(int)
@@ -87,15 +88,13 @@ even_even= M[1::2, 1::2]
 second = np.vstack((even_odd,even_even))
 M = np.hstack((first,second))
 '''
-np.fill_diagonal(M,0)
-
-print np.shape(M)
+#Remove connections to own regions
+np.fill_diagonal(M,0) 
+#Save connectome
 np.savetxt("foo.csv", M, delimiter=",")
 #np.savetxt('connectome.txt', M) 
  
 tem = M.sum(axis=1)
-tem2 = tem.sum(axis=0)
-print tem2
-
+tem2 = tem.sum(axis=0) 
 #plt.imshow(np.log1p(M), interpolation='nearest')
 #plt.savefig("connectivity.png")
